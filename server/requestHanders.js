@@ -12,14 +12,6 @@ var jade = require('jade');
 var read = require('./read');
 
 function entry(pathname, response, request) {
-    var rizhi = '';
-    var data = request.headers;
-    for(var i in data) {
-        rizhi += '\n\r【【【'+ i +'】】】\n\r'+data[i]+'\n\r==============\n\r';
-    }
-    fs.writeFile('rizhi.txt', rizhi, function (err) {
-        if(err) throw err;
-    });
     //文件
     var path = rootDir + pathname
         ,stat
