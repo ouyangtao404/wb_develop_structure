@@ -1,19 +1,44 @@
 doctype 5
-html(lang="en")
-  head
-    title 模板2
-    meta(charset='utf-8')
-    script(type='text/javascript').
-  body
+html
+	- var mod = "<%mod_load('顶部', 'globalConfig', 'top.jade')%>"
+	| !{mod}
 
-    h1 Jade - node template engine
-    #container.col
-      if youAreUsingJade
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Jade is a terse and simple
-        templating language with a
-        strong focus on performance
-        and powerful features.
+	body
+
+		- var mod = "<%mod_load('头部', 'header', 'default.jade')%>"
+		| !{mod}
+
+		- var mod = "<%mod_load('引入不存在的模块', 'test2', 'default.jade')%>"
+		| !{mod}
+
+		- var mod = "<%mod_load('测试模块2', 'test2', 'default.html')%>"
+		| !{mod}
+
+		- var mod = "<%mod_load('头部', 'footer', 'default.jade')%>"
+		| !{mod}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,24 +16,24 @@ function loadMod(str) {
     var rst = str.replace(reg, function(word, notes, dir, file) {
         var fileUrl = pre + dir + '\/' + file;
         var fileContent = '';
+        var note_before = '\n\r<!--========='+ notes +' start========-->\r';
+        var note_after = '\r<!--========='+ notes +' end========-->\n\r';
 
         try {
-            fileContent = read.readFile(fileUrl);
+            if(fileUrl.indexOf('.jade') !== -1) {
+                fileContent = jade.renderFile(fileUrl, { pretty: true });
+            } else {
+                fileContent = read.readFile(fileUrl);
+            }
         } catch(e) {
-            console.log('the module is not exist(file url is'+ fileUrl +')');
             isJade = true;
-            fileContent = read.readFile(mod404);
-        }
-
-        if(fileUrl.indexOf('.jade') !== -1) {
-            fileContent = jade.renderFile(fileUrl, { pretty: true });
+            fileContent = jade.renderFile(mod404);
+            fileContent = fileContent.replace('<path>', fileUrl);
         }
 
         fileContent = modLoad(fileContent);
 
-        return '\n<!--========='+ notes +' start========-->\n'+
-            fileContent +
-        '\n<!--========='+ notes +' end========-->';
+        return note_before + fileContent + note_after;
     });
     return rst;
 }

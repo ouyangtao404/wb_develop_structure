@@ -14,7 +14,7 @@ function combine() {
         if(err) throw err;
         var str = '';
         for(var i in files) {
-            str += read.readFile(files[i])
+            str += read.readFile(files[i]) + '\n\r';
         }
         fs.writeFile(combineJsPath, str, function (err) {
             if(err) throw err;
@@ -24,7 +24,7 @@ function combine() {
         if(err) throw err;
         var str = '';
         for(var i in files) {
-            str += read.readFile(files[i])
+            str += read.readFile(files[i]) + '\n\r';
         }
         fs.writeFile(combineCssPath, str, function (err) {
             if(err) throw err;

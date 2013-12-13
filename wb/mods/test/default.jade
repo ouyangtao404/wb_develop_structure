@@ -1,1 +1,53 @@
-p(style="color:red;") 我是测试模块
+#container
+	.bar
+	#container2.bar
+	#container3.bar.bar2
+	p test
+	p
+		| test1 test2
+		| test3 test4
+
+	#user #{author} &lt;#{locals[email]}&gt;
+	p \#{转义}
+
+	- var html = "<script></script>"
+	| !{html}
+
+	label
+		| Username:123
+		input(name='user[name]')
+
+	label Username:
+		input(name='user[name]')
+
+	//一些段落1 会显示
+	//-该行注释将不会被输出到解析后的页面中
+	p.
+		foo asdf
+		asdf
+		asdfasdfaf
+		asdf
+		asd.
+
+	ul
+		li.first
+			a(href='#') foo
+		li
+			a(href='#') bar
+		li.last
+			a(href='#') baz
+
+	a(href='/login', title='View login page') Login
+	input(type="checkbox", checked="checked")
+	input(type='checkbox',
+	name='agreement',
+	checked)
+
+	- var obj = { foo: 'bar' }
+	- each val, key in obj
+		li #{key}: #{val}
+
+	- var foo = [2,3,4];
+	- foo.forEach(function(item) {
+		li !{item}
+	- })

@@ -1,63 +1,18 @@
 doctype 5
-html(lang="en")
-	head
-		title 模板1
-		meta(charset='utf-8')
-		script(type='text/javascript').
-	body <%mod_load('测试条件1', 'test', 'default.jade')%>
-		#container
-		.bar
-		#container2.bar
-		#container3.bar.bar2
-		p test
-		p
-			| test1 test2
-			| test3 test4
+html
+	- var mod = "<%mod_load('顶部', 'globalConfig', 'top.jade')%>"
+	| !{mod}
 
-		#user #{author} &lt;#{locals[email]}&gt;
-		p \#{转义}
+	body
 
-		- var html = "<script></script>"
-		| !{html}
+		- var mod = "<%mod_load('头部', 'header', 'default.jade')%>"
+		| !{mod}
 
-		label
-			| Username:123
-			input(name='user[name]')
+		- var mod = "<%mod_load('测试模块1', 'test', 'default.jade')%>"
+		| !{mod}
 
-		label Username:
-			input(name='user[name]')
-
-		//一些段落1 会显示
-		//-该行注释将不会被输出到解析后的页面中
-		p.
-			foo asdf
-			asdf
-			asdfasdfaf
-			asdf
-			asd.
-
-		ul
-			li.first
-				a(href='#') foo
-			li
-				a(href='#') bar
-			li.last
-				a(href='#') baz
-
-		a(href='/login', title='View login page') Login
-		input(type="checkbox", checked="checked")
-		input(type='checkbox',
-		name='agreement',
-		checked)
-
-		- var obj = { foo: 'bar' }
-		- each val, key in obj
-			li #{key}: #{val}
-
-		- var foo = [2,3,4];
-		- foo.forEach(function(item) {
-			li !{item}
-		- })
+		- var mod = "<%mod_load('头部', 'footer', 'default.jade')%>"
+		| !{mod}
 
 
 
