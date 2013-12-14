@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="adae8079-5dc2-4913-a787-18f5e7874923" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/rizhi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/test.txt" afterPath="" />
+    <list default="true" id="adae8079-5dc2-4913-a787-18f5e7874923" name="Default" comment="bugfix:编译渲染过程优化，先合并js、css，再">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wb/layout-html/TEMPLATE.jade.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wb/layout/TEMPLATE.jade.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/wb/jade/TEMPLATE.jade" afterPath="$PROJECT_DIR$/wb/layout-jade/TEMPLATE.jade" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/wb/jade/TEMPLATE2.jade" afterPath="$PROJECT_DIR$/wb/layout-jade/TEMPLATE2.jade" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/wb/layout/TEMPLATE2.jade.html" afterPath="$PROJECT_DIR$/wb/layout-html/TEMPLATE2.jade.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/wb/mods/test/assets/default.js" afterPath="$PROJECT_DIR$/wb/mods/m-test/assets/default.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/wb/mods/test/assets/default.less" afterPath="$PROJECT_DIR$/wb/mods/m-test/assets/default.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/wb/mods/test/default.jade" afterPath="$PROJECT_DIR$/wb/mods/m-test/default.jade" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/wb/mods/test2/assets/default.css" afterPath="$PROJECT_DIR$/wb/mods/m-test2/assets/default.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/wb/mods/test2/assets/default.js" afterPath="$PROJECT_DIR$/wb/mods/m-test2/assets/default.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/wb/mods/test2/default.html" afterPath="$PROJECT_DIR$/wb/mods/m-test2/default.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/combine.js" afterPath="$PROJECT_DIR$/server/combine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/less2css.js" afterPath="$PROJECT_DIR$/server/less2css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/jade2html.js" afterPath="$PROJECT_DIR$/server/jade2html.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/requestHanders.js" afterPath="$PROJECT_DIR$/server/requestHanders.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wb/publish/combineCss.css" afterPath="$PROJECT_DIR$/wb/publish/combineCss.css" />
     </list>
@@ -47,7 +57,47 @@
     <favorites_list name="wb_develop_structure" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="requestHanders.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/requestHanders.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="0" selection-start="697" selection-end="697" vertical-scroll-proportion="0.58805513">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="35" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jade2html.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/jade2html.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="9" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TEMPLATE.jade.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wb/layout-html/TEMPLATE.jade.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -65,10 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/wb/jade/TEMPLATE2.jade" />
-        <option value="$USER_HOME$/secdemon_backstage_wd/server/modLoad.js" />
-        <option value="$PROJECT_DIR$/server/rizhi.txt" />
-        <option value="$PROJECT_DIR$/html/list.html" />
         <option value="$PROJECT_DIR$/wb/mods/globalConfig/top.jade" />
         <option value="$PROJECT_DIR$/server/test.txt" />
         <option value="$PROJECT_DIR$/wb/mods/test/default.jade" />
@@ -77,10 +123,14 @@
         <option value="$PROJECT_DIR$/wb/mods/footer/assets/default.js" />
         <option value="$PROJECT_DIR$/wb/mods/test/assets/default.less" />
         <option value="$PROJECT_DIR$/wb/mods/globalConfig/assets/test.less" />
-        <option value="$PROJECT_DIR$/server/requestHanders.js" />
         <option value="$PROJECT_DIR$/server/less2css.js" />
+        <option value="$PROJECT_DIR$/wb/layout-jade/TEMPLATE.jade" />
+        <option value="$PROJECT_DIR$/wb/layout-jade/TEMPLATE2.jade" />
         <option value="$PROJECT_DIR$/server/combine.js" />
+        <option value="$PROJECT_DIR$/wb/layout-html/TEMPLATE.jade.html" />
+        <option value="$PROJECT_DIR$/server/jade2html.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/server/requestHanders.js" />
       </list>
     </option>
   </component>
@@ -161,7 +211,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mods" />
+              <option name="myItemId" value="layout-jade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wb_develop_structure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wb_develop_structure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout-html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -283,7 +351,11 @@
       <created>1387000378970</created>
       <updated>1387000378970</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="less支持：编译所有模块里的less文件，到同一路径下生成一个.css文件">
+      <created>1387002255453</created>
+      <updated>1387002255453</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -308,14 +380,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21961102" sideWeight="0.67049366" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21961102" sideWeight="0.67058825" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -324,7 +397,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -365,7 +437,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="less支持：编译所有模块里的less文件到combineCss.css（和模块里的css一起）" />
+    <option name="LAST_COMMIT_MESSAGE" value="less支持：编译所有模块里的less文件，到同一路径下生成一个.css文件" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -381,56 +453,15 @@
     <MESSAGE value="稳定版本：&#10;1.访问目录路径重定向到最后有/的路径&#10;2.可以项目内所有结构&#10;3.支持jade编译，模板放到/wb/jade/中，模块放到/wb/mods/模块名/模块.jade&#10;4.模块也支持html结构的&#10;&#10;" />
     <MESSAGE value="bugfix:引入不存在模块时，服务不停止" />
     <MESSAGE value="less支持：编译所有模块里的less文件到combineCss.css（和模块里的css一起）" />
+    <MESSAGE value="less支持：编译所有模块里的less文件，到同一路径下生成一个.css文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wb/layout/TEMPLATE.jade.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.025477707">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wb/jade/TEMPLATE.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wb/mods/test2/assets/default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wb/mods/footer/assets/default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wb/mods/globalConfig/assets/test.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="18" selection-start="78" selection-end="78" vertical-scroll-proportion="0.09800919">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wb/mods/globalConfig/assets/reset.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/combine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="21" selection-start="358" selection-end="358" vertical-scroll-proportion="0.44663382">
           <folding />
         </state>
       </provider>
@@ -442,21 +473,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wb/mods/test/assets/default.less.css">
+    <entry file="file://$PROJECT_DIR$/wb/mods/m-test/assets/default.less.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="24" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wb/mods/test/assets/default.less">
+    <entry file="file://$PROJECT_DIR$/wb/mods/m-test/assets/default.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="1" selection-start="73" selection-end="73" vertical-scroll-proportion="0.19601838">
           <folding />
@@ -470,16 +494,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wb/mods/test/default.jade">
+    <entry file="file://$PROJECT_DIR$/wb/mods/m-test/default.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/requestHanders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="5" selection-start="1459" selection-end="1459" vertical-scroll-proportion="1.3014354">
           <folding />
         </state>
       </provider>
@@ -494,6 +511,58 @@
     <entry file="file://$PROJECT_DIR$/wb/mods/globalConfig/assets/global.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="2" selection-start="19" selection-end="19" vertical-scroll-proportion="0.053511705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wb/layout-jade/TEMPLATE2.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/combine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="35" selection-start="463" selection-end="463" vertical-scroll-proportion="0.41194487">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wb/layout-jade/TEMPLATE.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="44" selection-start="206" selection-end="206" vertical-scroll-proportion="0.24502297">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wb/layout-html/TEMPLATE.jade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/jade2html.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="35" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/requestHanders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="697" selection-end="697" vertical-scroll-proportion="0.58805513">
           <folding />
         </state>
       </provider>

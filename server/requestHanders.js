@@ -12,26 +12,29 @@ var jade = require('jade');
 var read = require('./read');
 
 function entry(pathname, response, request) {
+    var contentType = request.headers.accept.split(',')[0];
+    (contentType === '*/*') && (contentType ='text/html');
+
     //文件
     var path = rootDir + pathname
         ,stat
         ;
 
     try {
-        stat =  fs.lstatSync(path)
+        stat =  fs.lstatSync(path);
     } catch(e) {
         var htmlStr = read.readFile(page404);
-        response.writeHead(404, {'Content-Type': 'text/html'});
+        response.writeHead(404, {'Content-Type': contentType});
         response.write(htmlStr);
         response.end();
         return;
     }
 
     if(stat.isFile()) {
-        var htmlStr = read.readFile(path);
-        response.writeHead(200, {'Content-Type': 'text/html'});
-        response.write(htmlStr);
-        response.end();
+            var htmlStr = read.readFile(path);
+            response.writeHead(200, {'Content-Type': contentType});
+            response.write(htmlStr);
+            response.end();
         return;
     }
 
@@ -86,7 +89,7 @@ function entry(pathname, response, request) {
     htmlStr = htmlStr.replace(reg, function(word, $1, $2) {
         return $1 + str + $2;
     });
-    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.writeHead(200, {'Content-Type': contentType});
     response.write(htmlStr);
     response.end();
 }

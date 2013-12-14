@@ -8,10 +8,10 @@ html
 		- var mod = "<%mod_load('头部', 'header', 'default.jade')%>"
 		| !{mod}
 
-		- var mod = "<%mod_load('引入不存在的模块', 'test2', 'default.jade')%>"
+		- var mod = "<%mod_load('引入不存在的模块', 'm-notexist', 'notexist.jade')%>"
 		| !{mod}
 
-		- var mod = "<%mod_load('测试模块2', 'test2', 'default.html')%>"
+		- var mod = "<%mod_load('测试模块2', 'm-test2', 'default.html')%>"
 		| !{mod}
 
 		- var mod = "<%mod_load('头部', 'footer', 'default.jade')%>"

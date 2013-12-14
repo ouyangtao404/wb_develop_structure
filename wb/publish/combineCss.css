@@ -14,7 +14,11 @@ body .bar {
 #test .bar {
   color: red;
 }
-th, td {
+/**
+* global.css
+*/
+/*css reset*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
     margin: 0;
     padding: 0;
 }
@@ -122,9 +126,25 @@ abbr[title], dfn[title] {
     transition: all .3s ease-out;
 }
 /*css reset end*/
+/*test.less of gloabal*/
+body {
+  background: blue;
+}
+body .bar {
+  color: #8a2be2;
+}
 
 /*footer css*/
 
+/*
+ *test .less
+*/
+#test {
+  background: #ccc;
+}
+#test .bar {
+  color: red;
+}
 
 /*test2 css*/
 /**

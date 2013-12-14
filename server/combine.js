@@ -14,12 +14,14 @@ var less = require('less');
 
 var read = require('./read');
 
-function combine() {
+function combine(callback) {
     var options = {};
 
     combineLess(function() {
         combineJs(function() {
-            combineCss();
+            combineCss(function() {
+                callback && callback()
+            });
         });
     });
 }
@@ -71,7 +73,6 @@ function combineCss(callback) {
                 str += read.readFile(files[i]) + cut;
             }
         }
-        console.log(read.readFile(combineCssPath));
         fs.appendFileSync(combineCssPath, globalStr + str);
         callback && callback();
     });

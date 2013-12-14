@@ -15,13 +15,15 @@ var less2css = require('./less2css');
 
 (function(){
     function onRequest(request, response) {
-        combine.combine();
-        jade2html.start();
+        jade2html.start(function() {
+            combine.combine(function() {
+                var pathname = url.parse(request.url).pathname;
+                requestHanders.entry(pathname, response, request);
+            });
+        });
+
+        //test.less->test.less.css,可选
         less2css.init();
-        setTimeout(function() {
-            var pathname = url.parse(request.url).pathname;
-            requestHanders.entry( pathname, response, request);
-        }, 100);
     }
     http.createServer(onRequest).listen(port);
     console.log('Server has started! path is '+ ip + ':' + port);
