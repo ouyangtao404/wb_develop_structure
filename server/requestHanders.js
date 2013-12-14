@@ -26,6 +26,7 @@ function entry(pathname, response, request) {
         response.end();
         return;
     }
+
     if(stat.isFile()) {
         var htmlStr = read.readFile(path);
         response.writeHead(200, {'Content-Type': 'text/html'});
@@ -60,7 +61,6 @@ function entry(pathname, response, request) {
             + '<a href="' + backUrl + '">返回上一层</a>'
             + '</li>\n';
     }
-
 
     for(; i<len; i++) {
         one = dirList[i];
