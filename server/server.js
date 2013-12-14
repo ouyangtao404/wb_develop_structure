@@ -11,11 +11,13 @@ var url = require('url');
 var requestHanders = require('./requestHanders');
 var combine = require('./combine');
 var jade2html = require('./jade2html');
+var less2css = require('./less2css');
 
 (function(){
     function onRequest(request, response) {
         combine.combine();
         jade2html.start();
+        less2css.init();
         setTimeout(function() {
             var pathname = url.parse(request.url).pathname;
             requestHanders.entry( pathname, response, request);

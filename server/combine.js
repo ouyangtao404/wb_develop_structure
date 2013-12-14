@@ -12,12 +12,10 @@ var fs = require('fs');
 var glob = require('glob');
 var less = require('less');
 
-var less2css = require('./less2css');
 var read = require('./read');
 
 function combine() {
     var options = {};
-    less2css.init();
 
     combineLess(function() {
         combineJs(function() {
