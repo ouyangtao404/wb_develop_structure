@@ -1,21 +1,17 @@
 doctype 5
 html
-	- var mod = "<%mod_load('顶部', 'globalConfig', 'top.jade')%>"
-	| !{mod}
 
-	body
+    <%mod_load('顶部', 'globalConfig', 'top.jade')%>
 
-		- var mod = "<%mod_load('头部', 'header', 'default.jade')%>"
-		| !{mod}
+    body
 
-		- var mod = "<%mod_load('引入不存在的模块', 'm-notexist', 'notexist.jade')%>"
-		| !{mod}
+        <%mod_load('头部', 'header', 'default.jade')%>
 
-		- var mod = "<%mod_load('测试模块2', 'm-test2', 'default.html')%>"
-		| !{mod}
+        <%mod_load('引入不存在的模块', 'm-notexist', 'notexist.jade')%>
 
-		- var mod = "<%mod_load('头部', 'footer', 'default.jade')%>"
-		| !{mod}
+        <%mod_load('测试模块2', 'm-test2', 'default.html')%>
+
+        <%mod_load('头部', 'footer', 'default.jade')%>
 
 
 

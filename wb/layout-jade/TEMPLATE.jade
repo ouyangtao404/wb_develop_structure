@@ -1,18 +1,14 @@
 doctype 5
 html
-	- var mod = "<%mod_load('顶部', 'globalConfig', 'top.jade')%>"
-	| !{mod}
 
-	body
+    <%mod_load('顶部', 'globalConfig', 'top.jade')%>
 
-		- var mod = "<%mod_load('头部', 'header', 'default.jade')%>"
-		| !{mod}
+    body
+        <%mod_load('头部', 'header', 'default.jade')%>
 
-		- var mod = "<%mod_load('测试模块1', 'm-test', 'default.jade')%>"
-		| !{mod}
+        <%mod_load('测试模块1', 'm-test', 'default.jade')%>
 
-		- var mod = "<%mod_load('头部', 'footer', 'default.jade')%>"
-		| !{mod}
+        <%mod_load('头部', 'footer', 'default.jade')%>
 
 
 

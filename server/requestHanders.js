@@ -15,10 +15,26 @@ function entry(pathname, response, request) {
     var contentType = request.headers.accept.split(',')[0];
     (contentType === '*/*') && (contentType ='text/html');
 
+    var path = rootDir + pathname;
+
+    //图片
+    if(contentType.indexOf('image') !== -1) {
+        fs.readFile(path, 'binary', function(error, file){
+            if(error){
+                response.writeHead(500,{"Content-Type":"text/plain"});
+                response.write(error+ "\n");
+                response.end();
+            }else{
+                response.writeHead(200,{"Content-Type":"image/png"});
+                response.write(file, 'binary');
+                response.end();
+            }
+        });
+        return;
+    }
+
     //文件
-    var path = rootDir + pathname
-        ,stat
-        ;
+    var stat;
 
     try {
         stat =  fs.lstatSync(path);
@@ -31,10 +47,10 @@ function entry(pathname, response, request) {
     }
 
     if(stat.isFile()) {
-            var htmlStr = read.readFile(path);
-            response.writeHead(200, {'Content-Type': contentType});
-            response.write(htmlStr);
-            response.end();
+        var htmlStr = read.readFile(path);
+        response.writeHead(200, {'Content-Type': contentType});
+        response.write(htmlStr);
+        response.end();
         return;
     }
 
