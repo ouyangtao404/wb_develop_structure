@@ -1,0 +1,9 @@
+/*
+ *test .less
+*/
+#test {
+  background: #ccc;
+}
+#test .bar {
+  color: red;
+}
