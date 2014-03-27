@@ -29,6 +29,7 @@ var less2css = require('./less2css');
     http.createServer(onRequest).listen(port);
     console.log('Server has started! path is '+ ip + ':' + port);
 })();
+<<<<<<< HEAD
 
 
 var options = {
@@ -44,3 +45,5 @@ var req = http.request(options, function (res) {
 req.on('error', function (e) {
     console.log('problem with request: ' + e.message);
 });
+=======
+>>>>>>> b75fcd0eb2385fdd471c352b941fae3f7de31528
