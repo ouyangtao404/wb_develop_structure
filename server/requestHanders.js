@@ -8,7 +8,6 @@ var root = '/';
 
 //模块
 var fs = require('fs');
-var jade = require('jade');
 var read = require('./read');
 
 function entry(pathname, response, request) {

@@ -1,0 +1,28 @@
+{
+    "name": "wb_develop_structure",
+    "version": "0.1.0",
+    "description": "前端开发生产框架",
+    "author": "ouyangtao <ouyangtao404@qq.com>",
+    "dependencies": {
+        "formidable": "1.x.x",
+        "glob": "0.4.2",
+        "less": ">= 0.6.7",
+        "jade": "0.35.0"
+    },
+    "devDependencies": {
+        "vows": "0.5.x"
+    },
+    "main": "index",
+    "bin": {
+        "test": "./bin/test.js"
+    },
+    "scripts": {
+        "start": "node server.js",
+        "test": "vows test/*.js",
+        "preinstall": "./configure",
+        "install": "make && make install"
+    },
+    "engines": {
+        "node": "0.4.x"
+    }
+}
